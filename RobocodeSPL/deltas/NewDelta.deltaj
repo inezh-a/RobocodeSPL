@@ -1,0 +1,8 @@
+delta NewDelta {
+	adds {
+		package de.tu_bs.cs.isf;
+			public class NewClass {
+
+			}
+	}
+}
