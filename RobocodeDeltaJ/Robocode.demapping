@@ -1,5 +1,8 @@
 NoMovement:
 <decore/Quiet.decore>
 
+Strafing:
+<decore/Strafing.decore>
+
 SpinningRadar:
 <decore/SpinningRadar.decore>

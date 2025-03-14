@@ -1,0 +1,9 @@
+delta SmallGun {
+	modifies jab.module.Gun {
+		modifies fire() {
+			if (bot.enemy != null) {
+				double bulletPower = 0.1;
+			}
+		}
+	}
+}

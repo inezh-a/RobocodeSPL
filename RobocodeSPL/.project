@@ -58,10 +58,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.deltaecore.suite.mapping.resource.demapping.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>de.ovgu.featureide.core.featureProjectNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>de.tu_bs.cs.isf.deltaj.resource.deltaj.nature</nature>
+		<nature>org.deltaecore.suite.mapping.resource.demapping.nature</nature>
 	</natures>
 </projectDescription>

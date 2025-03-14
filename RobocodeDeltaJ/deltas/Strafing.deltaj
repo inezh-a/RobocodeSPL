@@ -1,0 +1,29 @@
+delta Strafing {
+	modifies jab.module.Movement {
+		adds import robocode.HitWallEvent;
+		adds import robocode.Event;
+		adds import jab.module.Module;
+		adds import jab.module.Movement;
+		
+		adds private int turnValue;
+
+		modifies move() {
+			// Limit our speed to 5
+			bot.setMaxVelocity(8);
+			// Start moving (and turning)
+			bot.setAhead(1);
+		}
+		
+		adds public turnAround(Module bot){
+			super(bot);
+			turnValue = 180;
+		}
+		
+		adds listen(Event e) {
+			if (e instanceof HitWallEvent) {
+				bot.setTurnRight(turnValue);
+			}
+		}
+		 
+	}
+}

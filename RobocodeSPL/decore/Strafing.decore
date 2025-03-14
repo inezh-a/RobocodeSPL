@@ -1,0 +1,30 @@
+ configuration delta "Strafing"
+	dialect <http://www.emftext.org/java>
+		modifies <../src/jab/module/Movement.java>
+		{
+	addClassifierImport(<class:jab.module.Movement>, "robocode.HitWallEvent");
+	addClassifierImport(<class:jab.module.Movement>, "robocode.Event");
+	addClassifierImport(<class:jab.module.Movement>, "jab.module.Module");
+	addClassifierImport(<class:jab.module.Movement>, "jab.module.Movement");
+	addMember(<class:jab.module.Movement>, "private int turnValue;
+");
+	modifyStatementListContainer(<method:jab.module.Movement.move()>, "public void move() {
+			// Limit our speed to 5
+			bot.setMaxVelocity(8);
+			// Start moving (and turning)
+			bot.setAhead(1);
+	}
+", "Strafing", false);
+	addMember(<class:jab.module.Movement>, "public turnAround(Module bot){
+			super(bot);
+			turnValue = 180;
+		}
+");
+	addMember(<class:jab.module.Movement>, "listen(Event e) {
+			if (e instanceof HitWallEvent) {
+				bot.setTurnRight(turnValue);
+			}
+		}
+");
+	}
+	
